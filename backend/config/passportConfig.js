@@ -3,9 +3,10 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy
 const User = require('../models/userModel')
 require('dotenv').config()
 console.log(process.env.clientID)
+console.log(process.env.clientSecret)
 
 passport.use(new GoogleStrategy({
-    clientID  :  process.env.clientID ,
+   clientID : process.env.clientID,
     clientSecret : process.env.clientSecret,
     callbackURL : process.env.callbackURL
 }, async(accessToken, refreshToken,profile,done)=>{
