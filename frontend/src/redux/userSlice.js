@@ -9,6 +9,7 @@ import {jwtDecode} from 'jwt-decode';
 export const Register = createAsyncThunk('/user/register', async(data,{rejectWithValue})=>{
     try {
       const res =  await axios.post(`${import.meta.env.VITE_API_URL}/api/register`,data)
+      console.log(import.meta.env.VITE_API_URL);
       console.log(res.data)
       return res.data
   }

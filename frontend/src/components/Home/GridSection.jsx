@@ -18,14 +18,15 @@ function GridSection() {
             </button>
           </div>
         </div>
-        {topFourImage.map((product) => (
-          <div className='relative'>
-            <img src={product.image} className="h-full w-full object-cover" />
-            <button className="absolute inset-0 bg-opacity-50 text-white opacity-0 hover:opacity-100 transition-all ease-in-out duration-300 h-full w-full bg-black">
-              View Details
-            </button>
-          </div>
-        ))}
+        {topFourImage.map((product, index) => (
+  <div key={product.id || index} className='relative'>
+    <img src={product.image} className="h-full w-full object-cover" />
+    <button className="absolute inset-0 bg-opacity-50 text-white opacity-0 hover:opacity-100 transition-all ease-in-out duration-300 h-full w-full bg-black">
+      View Details
+    </button>
+  </div>
+))}
+
       </div>
     </div>
   );

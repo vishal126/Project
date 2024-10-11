@@ -66,11 +66,12 @@ function Navbar() {
         {/* second */}
         <div>
           <div className="flex justify-center items-center">
-            <ul className="flex space-x-10">
-              {NavData.map((items) => (
-                <Navitems to={items.url} text={items.text} />
-              ))}
-            </ul>
+          <ul className="flex space-x-10">
+  {NavData.map((items, index) => (
+    <Navitems key={items.id || index} to={items.url} text={items.text} />
+  ))}
+</ul>
+
           </div>
         </div>
       </div>
